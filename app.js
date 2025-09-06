@@ -18,3 +18,16 @@ function agregarAmigo() {
 
   inputAmigo.value = "";
 }
+
+function sortearAmigo() {
+  const amigos = listaAmigos.getElementsByTagName("li");
+  if (amigos.length == 0) {
+    alert("No hay amigos para sortear");
+  }
+  const aleatorio = Math.floor(Math.random() * amigos.length);
+  const resultado = document.getElementById("resultado");
+  const li = document.createElement("li");
+  li.textContent = `Tu amigo secreto es: ${amigos[aleatorio].textContent}`;
+  resultado.appendChild(li);
+  listaAmigos.innerHTML = "";
+}
